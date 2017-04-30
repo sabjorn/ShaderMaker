@@ -31,6 +31,9 @@
 #include "FFGLShader.h"
 #include "FFGLPluginSDK.h"
 
+#include <iostream>
+#include <fstream>
+
 #if (!(defined(WIN32) || defined(_WIN32) || defined(__WIN32__)))
 // posix
 typedef uint8_t  CHAR;
@@ -70,6 +73,7 @@ public:
 	FFResult GetInputStatus(DWORD dwIndex);
 	char * GetParameterDisplay(DWORD dwIndex);
 
+    std::string get_file_contents(const char *filename);
 	///////////////////////////////////////////////////
 	// Factory method
 	///////////////////////////////////////////////////
@@ -93,6 +97,7 @@ protected:
 	float m_UserGreen;
 	float m_UserBlue;
 	float m_UserAlpha;
+	float m_UserBeta;
 
 	// Flags
 	bool bInitialized;
@@ -171,13 +176,27 @@ protected:
 	GLint m_surfacePositionLocation;
 	GLint m_vertexPositionLocation;
 
+	GLint m_ringRangeGL;
+	GLint m_ringCountGL;
+	GLint m_skewGL;
+
+	//Mine
+	float m_outside;
+	float m_inside;
+	float m_quantize;
+	float m_ringRange;
+	float m_ringCount;
+	float m_skewx;
+	float m_skewy;
+
 	// Extras
 	GLint m_inputColourLocation;
+	GLint m_inputOtherLocation;
 
 	void SetDefaults();
 	void StartCounter();
 	double GetCounter();
-	bool LoadShader(std::string shaderString);
+	bool LoadShader(std::string shaderString, std::string vertexShaderString);
 	void CreateRectangleTexture(FFGLTextureStruct Texture, FFGLTexCoords maxCoords, GLuint &glTexture, GLenum texunit, GLuint &fbo, GLuint hostFbo);
 };
 

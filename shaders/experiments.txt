@@ -1,0 +1,17 @@
+void main(void)
+{
+    vec2 uv = gl_FragCoord.xy / iResolution.xy;
+
+    vec3 col = texture2D( iChannel0, uv ).xyz;
+    vec2 centre = vec2(.5 , .5);
+    float d = distance(uv, centre);
+    
+    float sin_norm = (sin(2.0 * 3.14 * iMouse.x * d) + 1.)/2.;
+    float cos_norm = (cos(2.0 * 3.14 * iMouse.x * d) + 1.)/2.;
+    vec2 vals = vec2(sin_norm, cos_norm);
+    vals *= uv;
+    vec3 newval = texture2D(iChannel0, vals).xyz;
+    
+    gl_FragColor = vec4(newval, inputOther);
+
+}
