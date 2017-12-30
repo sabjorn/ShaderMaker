@@ -137,12 +137,12 @@ ShaderMaker::ShaderMaker():CFreeFrameGLPlugin()
 	SetMaxInputs(2); // TODO - 4 inputs
 
 	// Parameters
-	SetParamInfo(FFPARAM_MOUSEY,        "Rotation",       FF_TYPE_STANDARD, 0.0f); m_UserMouseY = 0.0f;
+	SetParamInfo(FFPARAM_MOUSEY,        "Rotation",       FF_TYPE_STANDARD, 0.5f); m_UserMouseY = 0.5f;
 	SetParamInfo(FFPARAM_MOUSELEFTX,    "X-Position",  FF_TYPE_STANDARD, 0.25f); m_UserMouseLeftX = 0.25f;
 	SetParamInfo(FFPARAM_MOUSELEFTY,    "Y-Position",  FF_TYPE_STANDARD, 0.25f); m_UserMouseLeftY = 0.25f;
-    SetParamInfo(FFPARAM_OUTSIDE,        "Outside",       FF_TYPE_STANDARD, 1.0f); m_outside = 1.0f;
+    SetParamInfo(FFPARAM_OUTSIDE,        "Outside",       FF_TYPE_STANDARD, 0.5f); m_outside = 0.5f;
     SetParamInfo(FFPARAM_INSIDE,        "Inside",       FF_TYPE_STANDARD, 0.0f); m_inside = 0.0f;
-    SetParamInfo(FFPARAM_QUANTIZE,      "# Rings",       FF_TYPE_STANDARD, 1.0f); m_quantize = 1.0f;
+    SetParamInfo(FFPARAM_QUANTIZE,      "# Rings",       FF_TYPE_STANDARD, 0.1f); m_quantize = 0.1f;
     SetParamInfo(FFPARAM_SKEWX, 	"X Skew",		FF_TYPE_STANDARD, 1.0f); m_skewx = 1.0f;
     SetParamInfo(FFPARAM_SKEWY, 	"Y Skew",		FF_TYPE_STANDARD, 1.0f); m_skewy = 1.0f;
 	// Set defaults
@@ -574,7 +574,7 @@ char * ShaderMaker::GetParameterDisplay(DWORD dwIndex) {
             return m_DisplayValue;
 
         case FFPARAM_QUANTIZE:
-            cross_secure_sprintf(m_DisplayValue, 16, "%d", (int)(m_quantize * 100.));
+            cross_secure_sprintf(m_DisplayValue, 16, "%d", (int)(m_quantize));
             return m_DisplayValue;
 
         case FFPARAM_SKEWX:
