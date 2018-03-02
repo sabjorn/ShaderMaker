@@ -62,7 +62,7 @@ int (*cross_secure_sprintf)(char *, size_t, const char *, ...) = snprintf;
 
 #define STRINGIFY(A) #A
 
-#define GLSLF_INPUT "/Users/sabjorn/Dropbox/code/shaders/bury/bury.glslf"
+#define GLSLF_INPUT "/Users/sabjorn/Dropbox/code/shaders/lines/lines.glslf"
 #define GLSLV_INPUT "/Users/sabjorn/ShaderMaker/shaders/default.glslv"
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -71,14 +71,14 @@ int (*cross_secure_sprintf)(char *, size_t, const char *, ...) = snprintf;
 static CFFGLPluginInfo PluginInfo ( 
 	ShaderMaker::CreateInstance,		// Create method
 	"AAAA",								// *** Plugin unique ID (4 chars) - this must be unique for each plugin
-	"Bury",						// *** Plugin name - make it different for each plugin 
+	"Lines",						// *** Plugin name - make it different for each plugin 
 	1,						   			// API major version number 													
 	006,								// API minor version number	
 	1,									// *** Plugin major version number
 	002,								// *** Plugin minor version number
 	FF_EFFECT,							// Plugin type can always be an effect
 	// FF_SOURCE,						// or change this to FF_SOURCE for shaders that do not use a texture
-	"Pol Bury inspired rotation effect", // *** Plugin description - you can expand on this
+	"Modulated lines", // *** Plugin description - you can expand on this
 	"by Steven A. Bjornson (info@sabjorn.net)"			// *** About - use your own name and details
 );
 
