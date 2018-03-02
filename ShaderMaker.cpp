@@ -62,7 +62,7 @@ int (*cross_secure_sprintf)(char *, size_t, const char *, ...) = snprintf;
 
 #define STRINGIFY(A) #A
 
-#define GLSLF_INPUT "/Users/sabjorn/Dropbox/code/shaders/bury/bury.glslf"
+#define GLSLF_INPUT "/Users/sabjorn/Dropbox/code/shaders/mosh/mosh.glslf"
 #define GLSLV_INPUT "/Users/sabjorn/ShaderMaker/shaders/default.glslv"
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
