@@ -70,7 +70,7 @@ int (*cross_secure_sprintf)(char *, size_t, const char *, ...) = snprintf;
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 static CFFGLPluginInfo PluginInfo ( 
 	ShaderMaker::CreateInstance,		// Create method
-	"AAAA",								// *** Plugin unique ID (4 chars) - this must be unique for each plugin
+	"AAAB",								// *** Plugin unique ID (4 chars) - this must be unique for each plugin
 	"Lines",						// *** Plugin name - make it different for each plugin 
 	1,						   			// API major version number 													
 	006,								// API minor version number	
